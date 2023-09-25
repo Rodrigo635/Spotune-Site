@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/saibamais.css">
+  <title>Saiba Mais - Trabalho CPD G1</title>
+</head>
+
+<body>
+  <div id="content-wrapper">
+
+    <script src="https://kit.fontawesome.com/c6ea5c52f4.js" crossorigin="anonymous"></script>
+  
+    <header>
+      <a href="{% url 'home' %}"><h1>Spotune</h1></a>
+  
+      <nav>
+        <li><a href="{% url 'home' %}">Início</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'playlist' %}">Playlist</a></li>
+        <li><a href="{% url 'sair' %}">Sair</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Logar</a></li>
+        <li><a href="{% url 'cadastro' %}">Cadastrar</a></li>
+        {% endif %}
+      </nav>
+    </header>
+  
+    <section class="container">
+  
+      <div class="box1">
+        <div class="box1-div1">
+          <h1>Esse é nosso Trabalho de Classificação e Pesquisa de Dados</h1>
+          <p>Nós da equipe de desenvolvimento da Spotune (Thales e Rodrigo) acreditamos que escolhemos boas tecnologias para essa produção. A nossa afinidade com a linguagem e com o framework foram fatos preponderantes para essas escolhas. O Django consegue interagir bem com HTML, CSS e JavaScript. O que nos ajudou na criação de um ambiente visual para aplicar nossos métodos de ordenação de forma mais clara. Nos estudos de aula se viu com mais claridade a utilização de um Bucket Sort para a ordenação dos gêneros, por se tratar de uma variável pouco robusta de volume (a quantidade de gêneros musicais). Já, nas demais regras de ordenação (por nota e por nome da música) foi utilizado o Insertion Sort dentro dos buckets do método anterior, assim, otimizando a performance do código.</p>
+        </div>
+        <div class="box1-div2">
+          <img src="../static/images/saibamais.jpg">
+        </div>
+      </div>
+  
+    </section>
+
+  </div>
+
+      <footer class="fixar-rodape">
+      <p>Spotune™, 2023. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

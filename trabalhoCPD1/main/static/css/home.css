@@ -1,0 +1,286 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+nav, ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+a:hover {
+    opacity: 1;
+}
+
+
+/* HEADER */
+header{
+    background-color: #090a0b;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+header h1{
+    font-size: 40px;
+    color: white;
+}
+
+header nav{
+    display: flex;
+}
+
+header li a{
+    color: white;
+    font-size: 20px;
+}
+
+header li{
+    margin: 0 15px;
+}
+
+header li:first-child{
+    margin-left: 0;
+}
+
+header li:last-child{
+    margin-right: 0;
+}
+
+@media (max-width: 768px){
+    header{
+        flex-direction: column;
+    }
+    header h1{
+        margin-bottom: 15px;
+    }
+}
+
+
+/* HERO */
+.hero{
+    background: linear-gradient(rgba(0, 0, 0, 0), #090a0b83, #090a0b), url('../images/hero.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 3.7rem;
+    margin-bottom: 15px;
+}
+
+.hero h3{
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+
+.hero .btn{
+    color: white;
+    background-color: #111416;
+    padding: 15px 30px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px){
+    .hero h1{
+        font-size: 2.5rem;
+    }
+    .hero h3{
+        font-size: 1.5rem;
+    }
+}
+
+/* LISTA DE MÚSICAS */
+.lista-de-musicas-texto {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #090a0b;
+}
+
+.lista-de-musicas-texto h1 {
+    color: white;
+    font-size: 4rem;
+    padding-top: 25px;
+    padding-bottom: 35px;
+}
+
+
+/* FORA DO CONTAINER */
+.fora-do-container{
+    width: 100%;
+    background-color: #16181b;
+    display: flex;
+    background-image: linear-gradient(to top, transparent, #090a0b); /* Define o gradiente */
+}
+
+
+/* CONTAINER */
+.container{
+    width: 70%;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.container .btn-block {
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    background-color: #111416;
+    transition: background-color 0.2s;
+}
+
+.container .btn-block:hover {
+    width: 100%;
+    background-color: #323232;
+}
+
+.container .btn-musicas .fa-play{
+    color: white;
+    margin-right: 10px;
+}
+
+.container .btn-musicas .titulo{
+    color: white;
+    padding-right: 5px;
+}
+
+.container .btn-musicas .fa-star{
+    margin-left: 7px;
+    margin-right: 7px;
+    color: rgb(220, 190, 41);
+}
+
+.container .btn-musicas .rating{
+    margin-left: 7px;
+    color: rgb(220, 190, 41);
+}
+
+.container .btn-musicas .separador{
+    color: #606060;
+}
+
+.container .btn-musicas .infos{
+    color: #606060;
+}
+
+.fa-heart {
+    color: rgb(216, 39, 39);
+    padding: auto;
+    cursor: pointer;
+  }
+
+.container .btn-musicas{
+    width: 100%;
+    display: flex;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 4px;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    white-space: nowrap;
+}
+
+.btn-popup{
+    color: white;
+    border-radius: 4px;
+    background-color: transparent;
+    border-style: none;
+    padding: 4px;
+    margin-left: 10px;
+}
+
+
+/* CONTENT */
+#content-wrapper {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.hero,
+.lista-de-musicas-texto,
+.container {
+    flex-grow: 1;
+}
+
+/* Estilo para a mensagem pop-up */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #606060;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 35px;
+    margin-top: 15px;
+    z-index: 999;
+}
+  
+/* Estilo para o botão "Fechar" na mensagem pop-up */
+#popup-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    border-radius: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+
+/* FOOTER */
+footer.fixar-rodape {
+    width: 100%;
+    height: 100px;
+    background-color: #090a0b;
+    color: white;
+    text-align: center;
+    padding-top: 7px;
+}
+
+footer p{
+    padding-top: 35px;
+    padding-left: 70px;
+    color: white;
+    font-size: 15px;
+}

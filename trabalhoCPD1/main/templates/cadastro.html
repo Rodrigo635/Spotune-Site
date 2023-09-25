@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/cadastro.css">
+  <title>Cadastro</title>
+</head>
+
+<body>
+  <script src="https://kit.fontawesome.com/c6ea5c52f4.js" crossorigin="anonymous"></script>
+  
+  <header>
+    <a href="{% url 'home' %}"><h1>Spotune</h1></a>
+
+    <nav>
+      <li><a href="{% url 'home' %}">Início</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="#">Playlists</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}">Logar</a></li>
+      {% endif %}
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="box">
+        <form action="{% url 'cadastro' %}" method="POST">
+          {% csrf_token %}
+            <h1>Cadastrar</h1>
+            <input type="text" name="username" placeholder="Seu nome...">
+            <input type="email" name="email" placeholder="Seu E-mail...">
+            <input type="password" name="password" placeholder="Senha...">
+            <input class="btn" type="submit" value="Cadastrar">
+        </form>
+    </div>
+  </section>
+
+  <footer class="fixar-rodape">
+    <p>Spotune™, 2023. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

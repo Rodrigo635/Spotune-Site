@@ -1,0 +1,226 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+nav, ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+a:hover {
+    opacity: 1;
+}
+
+
+/* HEADER */
+header{
+    background-color: #090a0b;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+header h1{
+    font-size: 40px;
+    color: white;
+}
+
+header nav{
+    display: flex;
+}
+
+header li a{
+    color: white;
+    font-size: 20px;
+}
+
+header li{
+    margin: 0 15px;
+}
+
+header li:first-child{
+    margin-left: 0;
+}
+
+header li:last-child{
+    margin-right: 0;
+}
+
+@media (max-width: 768px){
+    header{
+        flex-direction: column;
+    }
+    header h1{
+        margin-bottom: 15px;
+    }
+}
+
+
+/* LISTA DE MÚSICAS */
+.lista-de-musicas-texto {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #090a0b;
+    margin-top: 100px;
+}
+
+.lista-de-musicas-texto h1 {
+    color: white;
+    font-size: 4rem;
+    padding-top: 25px;
+}
+
+
+/* CONTAINER */
+.container {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), #090a0b83, #090a0b), url('../images/hero3.jpg');
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container .box1 {
+    margin-top: 60px;
+    padding: 0;
+    width: 60%;
+    height: 500px;
+    background-color: #111416;
+    border-radius: 15px;
+    display: flex; 
+}
+
+.box1 .box1-div1{
+    flex: 1; 
+    border-radius: 15px;
+    background-color: #111416;
+    text-align: center;
+}
+
+.box1 .box1-div1 h1{
+    color: white;
+    font-size: 2.3rem;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    padding-left: 75px;
+    padding-right: 20px;
+}
+
+.box1 .box1-div1 p{
+    color: white;
+    text-align: justify;
+    font-size: 15px;
+    padding-left: 65px;
+}    
+
+.box1 .box1-div2 {
+    flex: 1;
+    border-radius: 15px;
+    background-color: #111416;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 .box1-div2 img {
+    max-width: 75%;
+    height: auto;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+
+.box2{
+    display: flex;
+    background-color: #323232;
+    width: 100%;
+    height: 2500px;
+    justify-content: center;
+    background-image: linear-gradient(to top, transparent, #090a0b); /* Define o gradiente */
+}
+
+.box2 .box2-div1{
+    width: 70%;
+    height: 2400px;
+    border-radius: 15px;
+    margin-top: 50px;
+    background-color: #111416;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* CONTENT */
+#content-wrapper {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.hero,
+.lista-de-musicas-texto,
+.container {
+    flex-grow: 1;
+}
+
+/* Estilo para a mensagem pop-up */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #606060;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 35px;
+    margin-top: 15px;
+    z-index: 999;
+}
+
+
+
+
+
+/* FOOTER */
+footer.fixar-rodape {
+    width: 100%;
+    height: 100px;
+    background-color: #090a0b;
+    color: white;
+    text-align: center;
+    padding-top: 7px;
+}
+
+footer p{
+    padding-top: 35px;
+    padding-left: 70px;
+    color: white;
+    font-size: 15px;
+}

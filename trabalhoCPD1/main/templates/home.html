@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/home.css">
+  <script src="../static/js/home.js"></script>
+  <title>Spotune - Trabalho CPD G1</title>
+</head>
+
+<body>
+
+  <div id="content-wrapper">
+    <script src="https://kit.fontawesome.com/c6ea5c52f4.js" crossorigin="anonymous"></script>
+  
+    <header>
+      <a href="{% url 'home' %}"><h1>Spotune</h1></a>
+  
+      <nav>
+        <li><a href="{% url 'home' %}">Início</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'playlist' %}">Playlist</a></li>
+        <li><a href="{% url 'sair' %}">Sair</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Logar</a></li>
+        <li><a href="{% url 'cadastro' %}">Cadastrar</a></li>
+        {% endif %}
+      </nav>
+    </header>
+  
+    <section class="hero">
+      <h1>Bem-vindo ao Spotune!</h1>
+      <h3>Conheça mais sobre nosso trabalho abaixo:</h3>
+      <a class="btn" href="{% url 'saibamais' %}">Saiba mais</a>
+    </section>
+  
+    <div class="gradient"></div>
+  
+    <div class="lista-de-musicas-texto">
+      <h1>Catálogo de músicas</h1>
+    </div>
+
+    <div class="fora-do-container">
+      <audio id="audio" src="../static/audio/musica.mp3"></audio>
+    
+      <div class="container">
+        <ul>
+          {% for song in songs %}
+          <div class="btn-block">
+            <a class="btn-musicas" href="#" onclick="playAudio(event, '{{ song.title }}', '{{ song.artist }}');">
+              <i class="fa-solid fa-play"></i><p class="separador">|</p><p class="rating">{{ song.rating }}</p><i class="fa-solid fa-star"></i><p class="titulo">{{ song.title }}</p>
+              <p class="infos">- {{ song.artist }} - {{ song.genre }} - {{ song.release_date }}</p>
+              {% if user.is_authenticated %}
+                <button class="btn-popup" onclick="showPopup(event, '{{ song.title }}', '{{ song.artist }}');"><i class="fa-solid fa-heart"></i></button>
+              {% endif %}
+            </a>
+          </div>
+          {% endfor %}
+        </ul>
+      </div>
+    
+      <div id="popup">
+        <span id="popup-close-btn" onclick="hidePopup()">X</span>
+        <p>Adicionado a sua playlist!</p>
+        <p id="popup-title"></p>
+        <p id="popup-artist"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="fixar-rodape">
+      <p>Spotune™, 2023. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+import random
+title_words = ["Borbulhante", "Papagaio", "Cabeça de", "Galinha", "Pneu", "Voador", "Fruta", "Marmota", "Quixotesco", "Fofocar", "Pipoca", "Pirilampo", "Piparote", "Fricção", "Desastrado", "Geringonça", "Fofura", "Pantufa", "Biruta", "Pirueta", "Goiabada", "Pirulito", "Ziguezague", "Mocassim", "Xereta", "Papagaio", "Zunzunzim", "Arco-íris", "Picolé", "Bambolê", "Esfarrapado", "Trambolho", "Esbugalhado", "Xodó", "Quiproquó", "Praia", "Montanha", "Felicidade", "Tranquilidade", "Sonho", "Cachoeira", "Verão", "Inverno", "Primavera", "Outono", "Viagem", "Aventura", "Romance", "Fogo", "Paixão", "Amizade", "Família", "Céu", "Arco-íris", "Água", "Fumaça", "Cabaré", "Cores", "Pôr do sol", "Risada", "Abraço", "Música", "Dança", "Livro", "Café", "Chocolate", "Cinema", "Noite", "Dia", "Criança", "Natureza", "Flore", "Árvore", "Pássaro", "Animais", "Oceano", "Céu estrelado", "Raios de sol", "Ventania", "Paz", "Harmonia", "Sabor", "Cheiro", "Brisa", "Tempo", "Ouvido", "Girino", "Borboleta", "Almofada", "Malabarismo", "Quisquilha", "Xerife", "Pamonha", "Guabiru", "Pomposo", "Piscadela", "Pentelho", "Gargalhada", "Patinete", "Bizarro", "Visgo", "Sorrateiro", "Jabuticaba", "Paralelepípedo", "Jazz", "Pateta", "Cambalhota", "Rabugento", "Mambembe", "Zombaria", "Mucilon", "Lambiscar", "Fuxico", "Catimba", "Galhofa", "Pipoqueiro", "Esparrela", "Peraltice", "Trambique", "Esparro", "Matracar", "Remexer", "Abobrinha", "Cabeludo", "Carcaça", "Resmungão", "Abobalhado", "Cotovelada", "Laranja", "Trança", "Xaropada", "Estabanado", "Baderna", "Munganga", "Pantim"]
+title_words += ["Camafeu", "Galinha","Bigorna", "Pneumatico", "Gororoba", "Piriri", "Trambolhão", "Sorvete", "Girassol", "Chafariz", "Bambolê", "Fungo", "Cochicho", "Bambolê", "Fungo", "Cochicho", "Bexiga", "Geringonça", "Trapalhada", "Rocambole", "Choramingar", "Arroto", "Estabanado", "Biruta", "Quixotesco", "Picolé", "Estapafúrdio", "Pururuca", "Baboseira", "Quiquiriqui", "Fuleiragem", "Flibusteiro", "Bagulho", "Furunfar", "Gambiarra", "Matusquela", "Panaca", "Quiproquó", "Quisquília", "Faniquito", "Esbugalhado", "Zureta", "Patacoada", "Fuleiragem", "Zigurate", "Ximbica", "Bisonho", "Rapapé", "Espulga", "Birbante", "Zunzunzim", "Xaropada", "Zabumbão", "Gororoba", "Patuscada", "Miranha", "Felicidade", "Sonho", "Praia", "Brisa", "Alegria", "Saudade", "Paixão", "Ventania", "Sombra", "Floresta", "Paz", "Cachoeira", "Montanha", "Esperança", "Amanhecer", "Crepúsculo", "Viagem", "Noite", "Poema", "Suspiro", "Céu", "Vento", "Magia", "Travesseiro", "Vida", "Estrela Cadente", "Arco-íris", "Inverno", "Verão", "Melodia", "Serenidade", "Reflexão", "Serendipidade", "Melancolia", "Aurora", "Encanto", "Euforia", "Aurora Boreal", "Inspiracão", "Liberdade", "Serenata", "Mágico", "Encantamento", "Harmonia", "Cumplicidade", "Imaginação", "Abraço", "Solitário", "Despertar", "Pôr do Sol", "Calmaria", "Deslumbrante", "Aventura", "Solitude", "Vagabundo", "Quietude", "Desejo", "Jardim", "Sereno", "Poesia", "Êxtase", "Sentimento", "Devaneio", "Brilho", "Solidão", "Mistério", "Beleza", "Abstração", "Relâmpago", "Perfeição", "Silêncio", "Exploração", "Inspiração", "Solidariedade", "Suspense", "Deslumbramento", "Encantador"]
+artist_names = ["Cristiano Ronaldo", "Metallica", "Blind Guardian", "Black Sabbath", "Ana Maria Braga", "Billie Eilish", "Nirvana", "Eminem", "AC/DC", "Hatsune Miku", "Batman & Robin", "Juninho Portugal", "Lionel Messi", "Banda Dejavu", "Ozzy Osbourne", "Zeca Pagodinho", "Esqueleto (do He-Man)", "He-Man", "Bob Esponja", "Freddy Fazbear", "Ayel LOL", "MC Pipokinha", "Pato Donald", "Orfeu Somaceo", "Queen", "Milionário e José Rico", "Cillian Murphy", "Benedict Cumberbatch", "Donald Trump", "Barack Obama", "Pereira²", "Borin Produções", "Curry & Blankets", "Ronaldinho Gaúcho", "Gabriel Ribeiro Pereira", "Russell Crowe", "Black Jack", "The Rock", "Sonic", "Mario", "Amado Batista", "Luciano Cassol", "Jorge e Mateus", "Corpo e Alma", "Gusttavo Lima", "Luiz Gonzaga", "Ariana Grande", "Beyoncé", "Leonardo DiCaprio", "Taylor Swift", "Robert Downey Jr.", "Jennifer Lawrence", "Selena Gomez", "Tom Hanks", "Angelina Jolie", "Brad Pitt", "Johnny Depp", "Meryl Streep", "Katy Perry", "Junior Cocco","Marco Antonio da Luz Maciel da Costa", "Antonio Meneghetti", "Rhauani Weber" ,"Dwayne Johnson", "Emma Watson", "Chris Hemsworth", "Neymar", "Shakira", "Justin Bieber", "Kim Kardashian", "Kanye West", "Lady Gaga", "Mark Zuckerberg", "Oprah Winfrey"]
+genres = ["Pop", "Rock", "Bandinha", "Funk", "Pagode", "Eletrônica", "Sertanejo", "Jazz", "Hip-Hop", "R&B", "Country", "Reggae", "Blues", "Rap", "Clássica", "Metal", "Indie", "Reggaeton", "Samba", "Forró", "Gospel", "Punk", "Disco", "Funk Carioca", "Alternativo", "MPB", "Soul", "Grunge", "Heavy Metal"]
+
+class Song:
+    def __init__(self, title, artist, genre, release_date, rating):
+        self.title = title
+        self.artist = artist
+        self.genre = genre
+        self.release_date = release_date
+        self.rating = rating
+
+    def __str__(self):
+        return f"{self.title} by {self.artist}"
+    
+    @staticmethod
+    def generate_random_songs(num_songs = 1):
+        random_songs = []
+        for _ in range(num_songs):
+            title = random.choice(title_words) + " " + random.choice(title_words)
+            artist = random.choice(artist_names)
+            genre = random.choice(genres)
+            release_date = f"{random.randint(2000, 2023)}-{random.randint(1,12):02d}-{random.randint(1, 28):02d}"
+            rating = round(random.uniform(0, 5), 1)
+            random_songs.append(Song(title, artist, genre, release_date, rating))
+        return random_songs

@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/playlist.css">
+  <title>Spotune - Trabalho CPD G1</title>
+</head>
+
+<body>
+  <script src="https://kit.fontawesome.com/c6ea5c52f4.js" crossorigin="anonymous"></script>
+  
+  <header>
+    <a href="{% url 'home' %}"><h1>Spotune</h1></a>
+
+    <nav>
+      <li><a href="{% url 'home' %}">Início</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'sair' %}">Sair</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}">Logar</a></li>
+      <li><a href="{% url 'cadastro' %}">Cadastrar</a></li>
+      {% endif %}
+    </nav>
+  </header>
+
+  <div class="gradient"></div>
+
+  <div class="lista-de-musicas-texto">
+    <h1>Sua playlist</h1>
+  </div>
+
+  <div class="fora-do-container">
+    <audio id="audio" src="../static/audio/musica.mp3"></audio>
+
+    <script>
+      var audio = document.getElementById('audio');
+    
+      function playAudio(event) {
+        event.preventDefault();
+    
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
+    
+    <div class="playlist-section">
+      <h2>Sua Playlist</h2>
+      <ul>
+        {% for user_song in user_songs %}
+          <li>{{ user_song.title }} - {{ user_song.artist }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <footer class="fixar-rodape">
+    <p>Spotune™, 2023. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+nav, ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+a:hover {
+    opacity: 1;
+}
+
+
+/* HEADER */
+header{
+    background-color: #090a0b;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+header h1{
+    font-size: 40px;
+    color: white;
+}
+
+header nav{
+    display: flex;
+}
+
+header li a{
+    color: white;
+    font-size: 20px;
+}
+
+header li{
+    margin: 0 15px;
+}
+
+header li:first-child{
+    margin-left: 0;
+}
+
+header li:last-child{
+    margin-right: 0;
+}
+
+@media (max-width: 768px){
+    header{
+        flex-direction: column;
+    }
+    header h1{
+        margin-bottom: 15px;
+    }
+}
+
+
+/* HERO */
+.hero{
+    background: linear-gradient(rgba(0, 0, 0, 0), #090a0b83, #090a0b), url('../images/hero_login.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero .box{
+    width: 20%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.hero h1{
+    font-size: 3.7rem;
+    margin-bottom: 15px;
+}
+
+.hero input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border-style: none;
+    padding: 10px 20px;
+}
+
+.hero .btn{
+    color: white;
+    background-color: #111416;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px){
+    .hero h1{
+        font-size: 2.5rem;
+    }
+    .hero h3{
+        font-size: 1.5rem;
+    }
+}
+
+
+/* FOOTER */
+footer.fixar-rodape{
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    padding-top: 7px;
+    position: relative;
+    background-color: #090a0b;
+
+  }
+
+footer p{
+    padding-top: 35px;
+    padding-left: 70px;
+    color: white;
+    font-size: 15px;
+}
