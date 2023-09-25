@@ -19,7 +19,7 @@
       {% if user.is_authenticated %}
       <li><a href="{% url 'sair' %}">Sair</a></li>
       {% else %}
-      <li><a href="{% url 'login' %}">Logar</a></li>
+      <li><a href="{% url 'login' %}">Entrar</a></li>
       <li><a href="{% url 'cadastro' %}">Cadastrar</a></li>
       {% endif %}
     </nav>
